@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>search</title>
+	</head>
+	<body>
+		<h1>search for a employeee</h1>
+		<form th:action="@{searchbyid}"method="post">
+			<label>enter id</label>
+			<input type="number"name="id">
+			<button type="submit">search</button>
+		</form>
+		<div th:if="${employee !=null}">
+			<h2>employee details</h2>
+			<p><strong>id</strong><span th:text="${employee.Id}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Name}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Phno}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Gender}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Salary}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Hra}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Da}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Email}"></span></p>
+			<p><strong>id</strong><span th:text="${employee.Department}"></span></p>
+		</div>
+		<div th:if="${employee==null}">
+			<p>no employee found with the given id</p>
+		</div>
+	</body>
+</html>

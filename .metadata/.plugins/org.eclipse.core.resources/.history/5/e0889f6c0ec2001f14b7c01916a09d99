@@ -1,0 +1,56 @@
+package com.satya.springbmvc.emp.service;
+
+import java.util.List;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.satya.springbmvc.emp.entity.Employeeentity;
+import com.satya.springbmvc.model.EmployeeModel;
+import com.satya.springbmvc.repository.EmployeeRepository;
+
+
+@Service
+public class Employeeservice {
+@Autowired
+EmployeeRepository employeeRepository;
+
+public static  Employeeentity saveEmployeeDetails(EmployeeModel employeeModel) 
+{
+	double hra;
+	hra= 20/100 * employeeModel.getSalary();
+	
+    double da;
+	Employeeentity emp=new Employeeentity();
+	emp.setName(employeeModel.getName());
+	emp.setPhno(employeeModel.getPhno());
+	emp.setEmail(employeeModel.getEmail());
+	emp.setSalary(employeeModel.getSalary());
+	emp.setDepartment(employeeModel.getDepartment());
+	
+	
+ 
+}
+
+public List<Employeeentity>getAllEmployees()
+{
+	List<Employeeentity>employee=EmployeeRepository.findAll();
+	return employee;
+}
+public Employeeentity searchById(long id)
+{
+	Optional<Employeeentity>optionalData=EmployeeRepository.findById(id);
+//	if(optionalData.isPresent())
+//	{
+//		Employeeentity employee=optionalData.get();
+//		return employee;
+//	}
+//	else
+//	{
+//		return null;
+//	}
+//}
+}

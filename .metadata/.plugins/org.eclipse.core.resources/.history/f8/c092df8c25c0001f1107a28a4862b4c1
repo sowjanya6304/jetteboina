@@ -1,0 +1,25 @@
+package com.satya.springbmvc.emp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.satya.springbmvc.controller.Employee;
+import com.satya.springbmvc.emp.repository.EmployeeRepository;
+
+
+
+@Service
+public class Employeeservice {
+@Autowired
+EmployeeRepository employeeRepository;
+
+public static void saveEmployeeDetails(Employee employee) {
+	
+	double hra;
+	hra=0.2 * salary;
+	
+    double da;
+	da=0.1* salary;
+}
+
+}

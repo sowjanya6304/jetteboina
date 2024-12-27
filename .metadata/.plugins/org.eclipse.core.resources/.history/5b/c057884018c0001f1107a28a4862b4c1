@@ -1,0 +1,5 @@
+package com.satya.springbmvc.emp.entity;
+
+public class Employeeentity {
+
+}

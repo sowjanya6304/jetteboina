@@ -1,0 +1,22 @@
+package com.satya.mvc.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Productmodel {
+	private long Id;
+	private String Name;
+	private String Brand;
+	private String Madein;
+	private double Price;
+	private int Quantity;
+	private double DiscountRate;
+	
+	
+	
+}

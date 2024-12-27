@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>search</title>
+	</head>
+	<body>
+		<h1>search for a employeee</h1>
+		<form th:action="@{searchbyid}"method="post">
+			<label>enter id</label>
+			<input type="number"name="id">
+			<button type="submit">search</button>
+		</form>
+		<div th:if="${employee !=null}">
+			<h2>employee details</h2>
+			<p><strong>id</strong><span th:</p>
+		</div>
+	</body>
+</html>

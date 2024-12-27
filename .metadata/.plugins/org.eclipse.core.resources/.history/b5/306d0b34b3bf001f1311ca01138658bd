@@ -1,0 +1,57 @@
+package com.satya.mvc.controler;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.satya.mvc.entity.ProductEntity;
+import com.satya.mvc.model.Productmodel;
+import com.satya.mvc.service.productservice;
+
+@Controller
+public class TestController {
+	@Autowired
+	productservice productservice;
+	
+	//get the form
+@GetMapping("/productform")
+public String getproductform()
+{
+	return "add-product";
+}
+
+	//to send the data
+@PostMapping("/saveproduct")
+public String saveproduct(Productmodel productmodel)
+{
+	productservice.saveProductDetails(productmodel);
+	return "prodone";
+}
+
+@GetMapping("/getAllproducts")
+public String getAllproducts(Model model)
+{	
+	List<ProductEntity>product=productservice.getAllproducts();
+	model.addAttribute("Products",product);
+	return "product-list";	
+}
+
+ @GetMapping("/getsearchform")
+ public String getsearchform() {
+	return "search.product";
+ }
+
+@PostMapping("/searchbyid")
+public String searchById(@RequestParam long id,Model model) {
+	ProductEntity product=productservice.searchById(id);
+	model.addAttribute("product",product);
+	return "search-product";
+	
+}
+
+}
+

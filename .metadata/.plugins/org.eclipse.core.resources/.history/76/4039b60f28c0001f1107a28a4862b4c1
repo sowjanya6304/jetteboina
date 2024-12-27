@@ -1,0 +1,57 @@
+package com.satya.springbmvc.emp.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.satya.springbmvc.controller.Employee;
+import com.satya.springbmvc.emp.entity.Employeeentity;
+import com.satya.springbmvc.emp.repository.EmployeeRepository;
+
+@Service
+public class Employeeservice {
+@Autowired
+EmployeeRepository employeeRepository;
+
+public static void saveEmployeeDetails(Employee employee) 
+{
+	double hra;
+	hra=0.2 * salary;
+	
+    double da;
+	da=0.1* salary;
+	
+	Employeeentity employeeentity=new Employeeentity();
+	
+	employeeentity.setName(Employee.getname());
+	employeeentity.setPhno(Employee.getphno());
+	employeeentity.setGender(Employee.gender());
+	employeeentity.setSalary(Employee.salary());
+	employeeentity.setHra(Employee.hra);
+	employeeentity.setDa(Employee.da);
+	employeeentity.setEmail(Employee.email);
+	employeeentity.setDepartment(Employee.department);
+	
+	EmployeeRepository.save(employeeentity);
+}
+public List<Employeeentity>getAllEmployees()
+{
+	List<Employeeentity>employee=EmployeeRepository.findAll();
+	return employee;
+}
+public Employeeentity searchById(long id)
+{
+	Optional<Employeeentity>optionalData=EmployeeRepository.findById(id);
+	if(optionalData.isPresent())
+	{
+		Employeeentity employee=optionalData.get();
+		return employee;
+	}
+	else
+	{
+		return null;
+	}
+}
+}

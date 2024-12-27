@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;springbootmvc1/src/main/resources/templates/product.list.html&apos; to &apos;product-list.html&apos;" description="Rename resource &apos;product.list.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/product.list.html" name="product-list.html" stamp="1734933834824" updateReferences="true"/>
+</session>

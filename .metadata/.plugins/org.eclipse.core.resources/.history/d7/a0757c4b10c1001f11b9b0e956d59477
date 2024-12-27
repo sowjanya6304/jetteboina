@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Employee List</title>
+	</head>
+	<body>
+		<div>
+			<h1>Employee List</h1>
+			<tabletrborder="2">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>name</th>
+						<th>phno</th>
+						<th>gender</th>
+						<th>salary</th>
+						<th>hra</th>
+						<th>da</th>
+			            <th>email</th>
+						<th>department</th>
+						<th>actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="employee:$(Employee)"></tr>
+					<td th:text="${employee.id}"></td>
+					<td th:text="${employee.name}"></td>
+					<td th:text="${employee.phno}"></td>
+					<td th:text="${employee.gender}"></td>
+					<td th:text="${employee.salary}"></td>
+					<td th:text="${employee.hra}"></td>
+					<td th:text="${employee.da}"></td>
+					<td th:text="${employee.email}"></td>
+					<td th:text="${employee.department}"></td>
+					<td><a th:href="@{'/delete/'+${employee.id}}">delete</a></td>
+				</tbody>
+			</tabletrborder>
+		</div>
+	</body>
+</html>

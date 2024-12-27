@@ -1,0 +1,31 @@
+package com.satya.springbmvc.emp;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.satya.springbmvc.emp.service.Employeeservice;
+
+
+@Controller
+public class Employee {
+	@Autowired
+	Employeeservice employeeservice;
+	
+	//get the data
+@GetMapping("/Employeeform")
+public String getEmployeeForm()
+{
+	return "add-Employee";
+}
+
+	//post the data
+@PostMapping("/submitemployee")
+public String sendEmployee(Employee employee)
+{
+	Employeeservice.saveEmployeeDetails(employee);
+	System.out.println(employee);
+	return "Empdone";
+}
+}

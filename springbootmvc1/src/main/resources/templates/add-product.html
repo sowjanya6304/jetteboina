@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>add-product</title>
+	</head>
+	<body>
+		<h1>product form</h1>
+		<form th:action="@{/saveproduct}" method="post">
+			
+		<label>proname</label>
+		<input type="text" name="name" required><br><br>
+		
+		
+		<label>probrand</label>
+		<input type="text" name="brand" required><br><br>
+		
+		<label>proprice</label>
+		<input type="number" name="price" required><br><br>
+		
+		<label>proquantity</label>
+		<input type="number" name="quantity" required><br><br>
+		
+		<label>promadein</label>
+		<input type="text" name="madein" required><br><br>
+		
+		<label>prodiscountRate</label>
+		<input type="number" name="discountRate" required><br><br>
+		
+		<button type="submit">save product</button>
+		<button type="reset">reset</button>
+		</form>
+	</body>
+</html>
